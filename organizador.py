@@ -26,6 +26,13 @@ def create_folders():
                 except:
                     pass
     #-------------------------------------------------------
+        elif '.dart' in directorie:
+            try:
+                os.mkdir('Dart')
+                print('criando pasta -> Dart')
+            except:
+                pass
+    #-------------------------------------------------------
         elif '.rb' in directorie:
             try:
                 os.mkdir('Ruby')
@@ -170,6 +177,15 @@ def move_files():
                 if full_name != 'organizador.py':
                     shutil.move(full_name, 'Python')
                     print('Movendo arquivos Python para pasta -> Python')
+            except:
+                pass
+    #-------------------------------------------------------
+
+        if extensions == '.dart':
+            try:
+                full_name = name+extensions
+                shutil.move(full_name, 'Dart')
+                print('Movendo arquivos em Dart para pasta -> Dart')
             except:
                 pass
     #-------------------------------------------------------
@@ -330,4 +346,5 @@ if __name__ == "__main__":
     create_folders()
     move_files()
     print('Pronto tudo organizado!!!')
+
     
