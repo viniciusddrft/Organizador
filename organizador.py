@@ -33,6 +33,13 @@ def create_folders():
             except:
                 pass
     #-------------------------------------------------------
+        elif '.scala' in directorie or '.sc' in directorie:
+            try:
+                os.mkdir('Scala')
+                print('criando pasta -> Scala')
+            except:
+                pass
+    #-------------------------------------------------------
         elif '.rb' in directorie:
             try:
                 os.mkdir('Ruby')
@@ -189,7 +196,14 @@ def move_files():
             except:
                 pass
     #-------------------------------------------------------
-
+        if extensions == '.scala' or extensions == '.sc':
+            try:
+                full_name = name+extensions
+                shutil.move(full_name, 'Scala')
+                print('Movendo arquivos em Scala para pasta -> Scala')
+            except:
+                pass
+    #-------------------------------------------------------
         if extensions == '.c':
             try:
                 full_name = name+extensions
@@ -346,5 +360,4 @@ if __name__ == "__main__":
     create_folders()
     move_files()
     print('Pronto tudo organizado!!!')
-
     
